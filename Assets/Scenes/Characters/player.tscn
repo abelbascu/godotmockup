@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://va8l84fsp3va"]
 
-[ext_resource type="Script" path="res://PlayerInput.cs" id="2_h72gi"]
-[ext_resource type="PackedScene" uid="uid://cke3ewmxng2d8" path="res://playerSprite.tscn" id="2_jouth"]
+[ext_resource type="Script" path="res://Assets/Scripts/Characters/PlayerInput.cs" id="1_gsdpp"]
+[ext_resource type="PackedScene" uid="uid://dlwkin53pl06b" path="res://Assets/Scenes/Characters/playerSprite.tscn" id="2_4te15"]
 
 [sub_resource type="Animation" id="Animation_r3gg4"]
 resource_name = "idle_down"
@@ -98,10 +98,10 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyemb"]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("2_h72gi")
+script = ExtResource("1_gsdpp")
 speed = 50.0
 
-[node name="PlayerAnims" parent="." instance=ExtResource("2_jouth")]
+[node name="PlayerAnims" parent="." instance=ExtResource("2_4te15")]
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PlayerAnims")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7wpugd878cam"
-path="res://.godot/imported/mainchar spritesheet reordered.png-ec740f501ab8db8472f67c2b9c04f72d.ctex"
+path="res://.godot/imported/mainchar spritesheet reordered.png-55d3e324c3b910b9ce35fdd1bd4f8e22.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainchar spritesheet reordered.png"
-dest_files=["res://.godot/imported/mainchar spritesheet reordered.png-ec740f501ab8db8472f67c2b9c04f72d.ctex"]
+source_file="res://Assets/Art/Characters/mainchar spritesheet reordered.png"
+dest_files=["res://.godot/imported/mainchar spritesheet reordered.png-55d3e324c3b910b9ce35fdd1bd4f8e22.ctex"]
 
 [params]
 

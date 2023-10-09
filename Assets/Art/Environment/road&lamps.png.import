@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhumap2r8xnch"
-path="res://.godot/imported/road&lamps.png-a8f954842af90b3e9536ef7248a27dfb.ctex"
+path="res://.godot/imported/road&lamps.png-a2177497a3164cd622c0bd8fea62d39d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/road&lamps.png"
-dest_files=["res://.godot/imported/road&lamps.png-a8f954842af90b3e9536ef7248a27dfb.ctex"]
+source_file="res://Assets/Art/Environment/road&lamps.png"
+dest_files=["res://.godot/imported/road&lamps.png-a2177497a3164cd622c0bd8fea62d39d.ctex"]
 
 [params]
 

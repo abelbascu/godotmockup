@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://qqxrp0jur1gl"]
+
+[ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_glvrs"]
+[ext_resource type="Texture2D" uid="uid://dhumap2r8xnch" path="res://Assets/Art/Environment/road&lamps.png" id="2_2fj40"]
+
+[node name="MIddle Street" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_glvrs")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Road&lamps" type="Sprite2D" parent="."]
+position = Vector2(-3, 13)
+scale = Vector2(0.197685, 0.197685)
+texture = ExtResource("2_2fj40")

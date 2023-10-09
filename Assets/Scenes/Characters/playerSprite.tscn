@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlwkin53pl06b"]
+
+[ext_resource type="Texture2D" uid="uid://c7wpugd878cam" path="res://Assets/Art/Characters/mainchar spritesheet reordered.png" id="1_xuv0t"]
+
+[node name="PlayerSprite" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_xuv0t")
+hframes = 4
+vframes = 5
+frame = 16
