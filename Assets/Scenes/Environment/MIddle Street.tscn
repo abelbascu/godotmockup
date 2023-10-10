@@ -6,10 +6,14 @@
 [node name="MIddle Street" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_glvrs")]
+position = Vector2(75, 56)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, -8)
+limit_left = 0
+limit_top = 0
 
 [node name="Road&lamps" type="Sprite2D" parent="."]
-position = Vector2(-3, 13)
+position = Vector2(190, 107)
 scale = Vector2(0.197685, 0.197685)
 texture = ExtResource("2_2fj40")
