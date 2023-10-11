@@ -17,8 +17,8 @@ public partial class PlayerInput : CharacterBody2D
 
 	public override void _Ready()
 	{
-		playerAnimations = GetNode<AnimationPlayer>("AnimationPlayer2");
-		playerSprite = GetNode<Sprite2D>("PlayerAnims");
+		playerAnimations = GetNode<AnimationPlayer>("MainCharacterAnimationPlayer");
+		playerSprite = GetNode<Sprite2D>("MainCharacterSprite");
 		//GD.Print(playerSprite.ToString()); 
 		speed = 50;
 	}

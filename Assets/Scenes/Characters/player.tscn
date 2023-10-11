@@ -101,14 +101,14 @@ _data = {
 script = ExtResource("1_gsdpp")
 speed = 50.0
 
-[node name="PlayerAnims" parent="." instance=ExtResource("2_4te15")]
+[node name="MainCharacterSprite" parent="." instance=ExtResource("2_4te15")]
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
-root_node = NodePath("../PlayerAnims")
+[node name="MainCharacterAnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../MainCharacterSprite")
 speed_scale = 0.69
 libraries = {
 "": SubResource("AnimationLibrary_0n7ga")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="MainCharacterCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_lyemb")

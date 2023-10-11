@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b3xvrshvfjk3r"]
+
+[node name="MainCamera" type="Camera2D"]
+position = Vector2(-1, -8)
+limit_left = 0
+limit_top = 0
