@@ -7,8 +7,10 @@
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ad5vs")]
-position = Vector2(180, 100)
+position = Vector2(182, 100)
+speed = 200.0
 
 [node name="MainCamera" parent="Player" instance=ExtResource("2_jn8fr")]
+limit_top = -100
 
 [node name="MIddle Street" parent="." instance=ExtResource("3_cy0r6")]

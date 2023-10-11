@@ -96,6 +96,8 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyemb"]
+radius = 8.0
+height = 38.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_gsdpp")
@@ -111,4 +113,5 @@ libraries = {
 }
 
 [node name="MainCharacterCollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_lyemb")

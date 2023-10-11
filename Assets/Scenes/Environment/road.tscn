@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dc80bh2yp4hno"]
+
+[ext_resource type="Texture2D" uid="uid://dhumap2r8xnch" path="res://Assets/Art/Environment/road&lamps.png" id="1_nf120"]
+
+[node name="Road" type="StaticBody2D"]
+z_index = -1
+
+[node name="road and lamps" type="Sprite2D" parent="."]
+position = Vector2(190, 132)
+scale = Vector2(0.197685, 0.197685)
+texture = ExtResource("1_nf120")
+
+[node name="road collider" type="CollisionPolygon2D" parent="."]
+position = Vector2(95, 35)
+scale = Vector2(0.809522, 0.824852)
+polygon = PackedVector2Array(-114.233, 204.331, -114.233, 249.869, 354.408, 248.638, 354.408, 204.331)

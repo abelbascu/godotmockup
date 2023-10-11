@@ -1,10 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://qqxrp0jur1gl"]
+[gd_scene load_steps=3 format=3 uid="uid://qqxrp0jur1gl"]
 
-[ext_resource type="Texture2D" uid="uid://dhumap2r8xnch" path="res://Assets/Art/Environment/road&lamps.png" id="2_2fj40"]
+[ext_resource type="PackedScene" uid="uid://dc80bh2yp4hno" path="res://Assets/Scenes/Environment/road.tscn" id="1_ume1q"]
 
-[node name="MIddle Street" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27a7s"]
+size = Vector2(44, 355)
 
-[node name="Road&lamps" type="Sprite2D" parent="."]
-position = Vector2(190, 132)
-scale = Vector2(0.197685, 0.197685)
-texture = ExtResource("2_2fj40")
+[node name="Middle Street" type="Node2D"]
+
+[node name="Roads" type="Node2D" parent="."]
+
+[node name="Road4" parent="Roads" instance=ExtResource("1_ume1q")]
+position = Vector2(2, -209)
+
+[node name="road collider" parent="Roads/Road4" index="1"]
+position = Vector2(89.2867, -38.2742)
+
+[node name="Road3" parent="Roads" instance=ExtResource("1_ume1q")]
+position = Vector2(382, -209)
+
+[node name="road collider" parent="Roads/Road3" index="1"]
+position = Vector2(89.2867, -38.2742)
+
+[node name="Road" parent="Roads" instance=ExtResource("1_ume1q")]
+
+[node name="road collider" parent="Roads/Road" index="1"]
+position = Vector2(94.2867, 65.7258)
+
+[node name="Road2" parent="Roads" instance=ExtResource("1_ume1q")]
+position = Vector2(380, 0)
+
+[node name="road collider" parent="Roads/Road2" index="1"]
+position = Vector2(94.2867, 65.7258)
+
+[node name="Invisible Boundaries" type="StaticBody2D" parent="Roads"]
+
+[node name="Invisible Left Boundary" type="CollisionShape2D" parent="Roads/Invisible Boundaries"]
+position = Vector2(-24, 96.5)
+shape = SubResource("RectangleShape2D_27a7s")
+
+[node name="Invisible Right Boundary" type="CollisionShape2D" parent="Roads/Invisible Boundaries"]
+position = Vector2(781, 98)
+shape = SubResource("RectangleShape2D_27a7s")
+
+[editable path="Roads/Road4"]
+[editable path="Roads/Road3"]
+[editable path="Roads/Road"]
+[editable path="Roads/Road2"]

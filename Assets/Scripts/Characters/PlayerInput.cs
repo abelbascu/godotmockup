@@ -20,7 +20,7 @@ public partial class PlayerInput : CharacterBody2D
 		playerAnimations = GetNode<AnimationPlayer>("MainCharacterAnimationPlayer");
 		playerSprite = GetNode<Sprite2D>("MainCharacterSprite");
 		//GD.Print(playerSprite.ToString()); 
-		speed = 50;
+		speed = 100;
 	}
 
 	public override void _PhysicsProcess(double delta)
