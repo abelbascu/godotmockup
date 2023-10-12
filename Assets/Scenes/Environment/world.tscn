@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp1f21hq0bley"]
+[gd_scene load_steps=5 format=3 uid="uid://bp1f21hq0bley"]
 
 [ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_ad5vs"]
 [ext_resource type="PackedScene" uid="uid://b3xvrshvfjk3r" path="res://Assets/Scenes/Camera/MainCamera.tscn" id="2_jn8fr"]
 [ext_resource type="PackedScene" uid="uid://qqxrp0jur1gl" path="res://Assets/Scenes/Environment/MIddle Street.tscn" id="3_cy0r6"]
+[ext_resource type="PackedScene" uid="uid://i5s2urjo7ni6" path="res://Assets/Scenes/Environment/Rain VFX.tscn" id="4_5sgd3"]
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ad5vs")]
 position = Vector2(182, 100)
 speed = 200.0
+
+[node name="Rain VFX" parent="Player" instance=ExtResource("4_5sgd3")]
+position = Vector2(-182, -200)
 
 [node name="MainCamera" parent="Player" instance=ExtResource("2_jn8fr")]
 limit_top = -100
