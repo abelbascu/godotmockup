@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc80bh2yp4hno"]
 
-[ext_resource type="Texture2D" uid="uid://dhumap2r8xnch" path="res://Assets/Art/Environment/road&lamps.png" id="1_nf120"]
+[ext_resource type="Texture2D" uid="uid://dhumap2r8xnch" path="res://Assets/Raw Art/Environment/road&lamps.png" id="1_nf120"]
 
 [node name="Road" type="StaticBody2D"]
 z_index = -1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://i5s2urjo7ni6"]
 
-[ext_resource type="Texture2D" uid="uid://myu210raf3x6" path="res://Assets/Art/Environment/raindrop..png" id="1_mjysr"]
+[ext_resource type="Texture2D" uid="uid://hdddp1iy0klk" path="res://Assets/Raw Art/Environment/raindrop..png" id="1_mjysr"]
 
 [node name="Rain VFX" type="Node2D"]
 

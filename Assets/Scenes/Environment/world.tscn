@@ -1,20 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp1f21hq0bley"]
+[gd_scene load_steps=6 format=3 uid="uid://bp1f21hq0bley"]
 
-[ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_ad5vs"]
-[ext_resource type="PackedScene" uid="uid://b3xvrshvfjk3r" path="res://Assets/Scenes/Camera/MainCamera.tscn" id="2_jn8fr"]
-[ext_resource type="PackedScene" uid="uid://qqxrp0jur1gl" path="res://Assets/Scenes/Environment/MIddle Street.tscn" id="3_cy0r6"]
-[ext_resource type="PackedScene" uid="uid://i5s2urjo7ni6" path="res://Assets/Scenes/Environment/Rain VFX.tscn" id="4_5sgd3"]
+[ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_2a568"]
+[ext_resource type="PackedScene" uid="uid://i5s2urjo7ni6" path="res://Assets/Scenes/Environment/Rain VFX.tscn" id="2_ql0ir"]
+[ext_resource type="PackedScene" uid="uid://b3xvrshvfjk3r" path="res://Assets/Scenes/Camera/MainCamera.tscn" id="3_ijlst"]
+[ext_resource type="PackedScene" uid="uid://qqxrp0jur1gl" path="res://Assets/Scenes/Environment/MIddle Street.tscn" id="4_th23m"]
+
+[sub_resource type="Environment" id="Environment_rhdyo"]
+background_mode = 3
+adjustment_enabled = true
+adjustment_brightness = 1.25
+adjustment_contrast = 1.47
+adjustment_saturation = 2.34
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ad5vs")]
+[node name="Player" parent="." instance=ExtResource("1_2a568")]
 position = Vector2(182, 100)
 speed = 200.0
 
-[node name="Rain VFX" parent="Player" instance=ExtResource("4_5sgd3")]
+[node name="Rain VFX" parent="Player" instance=ExtResource("2_ql0ir")]
 position = Vector2(-182, -200)
 
-[node name="MainCamera" parent="Player" instance=ExtResource("2_jn8fr")]
+[node name="MainCamera" parent="Player" instance=ExtResource("3_ijlst")]
 limit_top = -100
 
-[node name="MIddle Street" parent="." instance=ExtResource("3_cy0r6")]
+[node name="MIddle Street" parent="." instance=ExtResource("4_th23m")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rhdyo")
