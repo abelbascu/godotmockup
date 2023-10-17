@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://i5s2urjo7ni6"]
+[gd_scene load_steps=5 format=3 uid="uid://i5s2urjo7ni6"]
 
 [ext_resource type="Texture2D" uid="uid://hdddp1iy0klk" path="res://Assets/Raw Art/Environment/raindrop..png" id="1_mjysr"]
+[ext_resource type="Texture2D" uid="uid://bwabp3ipp2oty" path="res://Assets/Raw Art/Environment/rain_splash-Sheet.png" id="2_ilsre"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_yuxbg"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m5nsx"]
+emission_shape = 3
+emission_box_extents = Vector3(450, 200, 1)
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 3.01
+anim_speed_max = 3.01
 
 [node name="Rain VFX" type="Node2D"]
 
@@ -28,3 +45,11 @@ angle_min = -720.0
 angle_max = -720.0
 scale_amount_min = 0.35
 color = Color(0.407843, 0.592157, 0.803922, 1)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_yuxbg")
+position = Vector2(161, 192)
+amount = 21
+process_material = SubResource("ParticleProcessMaterial_m5nsx")
+texture = ExtResource("2_ilsre")
+lifetime = 0.1
