@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bp1f21hq0bley"]
+[gd_scene load_steps=7 format=3 uid="uid://bp1f21hq0bley"]
 
 [ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_2a568"]
 [ext_resource type="PackedScene" uid="uid://i5s2urjo7ni6" path="res://Assets/Scenes/Environment/Rain VFX.tscn" id="2_ql0ir"]
 [ext_resource type="PackedScene" uid="uid://b3xvrshvfjk3r" path="res://Assets/Scenes/Camera/MainCamera.tscn" id="3_ijlst"]
 [ext_resource type="PackedScene" uid="uid://qqxrp0jur1gl" path="res://Assets/Scenes/Environment/MIddle Street.tscn" id="4_th23m"]
+[ext_resource type="PackedScene" uid="uid://q6r825dyuhoy" path="res://Assets/Scenes/Characters/FemaleNPC.tscn" id="5_xuti2"]
 
 [sub_resource type="Environment" id="Environment_rhdyo"]
 background_mode = 3
@@ -28,7 +29,11 @@ limit_top = -100
 
 [node name="MIddle Street" parent="." instance=ExtResource("4_th23m")]
 z_as_relative = true
-y_sort_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_rhdyo")
+
+[node name="FemaleNPC" parent="." instance=ExtResource("5_xuti2")]
+texture_filter = 3
+position = Vector2(721, 73)
+scale = Vector2(0.4, 0.4)

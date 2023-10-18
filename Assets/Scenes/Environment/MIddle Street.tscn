@@ -1,56 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://qqxrp0jur1gl"]
+[gd_scene load_steps=5 format=3 uid="uid://qqxrp0jur1gl"]
 
 [ext_resource type="PackedScene" uid="uid://nlu5qghegcr8" path="res://Assets/Scenes/Environment/ground_middle_street.tscn" id="1_26l8u"]
-[ext_resource type="Texture2D" uid="uid://djwsk751ol8s" path="res://Assets/Raw Art/Environment/TX Plant.png" id="2_26ahp"]
 [ext_resource type="PackedScene" uid="uid://dc80bh2yp4hno" path="res://Assets/Scenes/Environment/road.tscn" id="3_o6e32"]
+[ext_resource type="TileSet" uid="uid://diem0p3olfbml" path="res://Assets/Tilesets/trees_tileset.tres" id="3_ojblq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_27a7s"]
 size = Vector2(44, 355)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igf8v"]
-texture = ExtResource("2_26ahp")
-1:0/size_in_atlas = Vector2i(8, 10)
-1:0/0 = 0
-1:0/0/y_sort_origin = 60
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.25, 54, 4.75, 53.5, 5.75, 70, -4.75, 70.5)
-9:0/size_in_atlas = Vector2i(8, 10)
-9:0/0 = 0
-9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-9:0/0/physics_layer_0/angular_velocity = 0.0
-18:0/size_in_atlas = Vector2i(6, 10)
-18:0/0 = 0
-18:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-18:0/0/physics_layer_0/angular_velocity = 0.0
-2:12/size_in_atlas = Vector2i(2, 2)
-2:12/0 = 0
-2:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:12/0/physics_layer_0/angular_velocity = 0.0
-6:12/size_in_atlas = Vector2i(2, 2)
-6:12/0 = 0
-6:12/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-6:12/0/physics_layer_0/angular_velocity = 0.0
-13:11/size_in_atlas = Vector2i(4, 4)
-13:11/0 = 0
-13:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-13:11/0/physics_layer_0/angular_velocity = 0.0
-17:11/size_in_atlas = Vector2i(4, 4)
-17:11/0 = 0
-17:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-17:11/0/physics_layer_0/angular_velocity = 0.0
-21:11/size_in_atlas = Vector2i(4, 4)
-21:11/0 = 0
-21:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-21:11/0/physics_layer_0/angular_velocity = 0.0
-9:11/size_in_atlas = Vector2i(4, 3)
-9:11/0 = 0
-9:11/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-9:11/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSet" id="TileSet_b4bfb"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_igf8v")
 
 [node name="Middle Street" type="Node2D"]
 z_as_relative = false
@@ -77,17 +32,17 @@ shape = SubResource("RectangleShape2D_27a7s")
 [node name="road collider" parent="roads/road" index="1"]
 position = Vector2(94.2867, 65.7258)
 
-[node name="road3" parent="roads" instance=ExtResource("3_o6e32")]
-position = Vector2(382, -209)
-
-[node name="road collider" parent="roads/road3" index="1"]
-position = Vector2(89.2867, -38.2742)
-
 [node name="road2" parent="roads" instance=ExtResource("3_o6e32")]
 position = Vector2(380, 0)
 
 [node name="road collider" parent="roads/road2" index="1"]
 position = Vector2(94.2867, 65.7258)
+
+[node name="road3" parent="roads" instance=ExtResource("3_o6e32")]
+position = Vector2(382, -209)
+
+[node name="road collider" parent="roads/road3" index="1"]
+position = Vector2(89.2867, -38.2742)
 
 [node name="road4" parent="roads" instance=ExtResource("3_o6e32")]
 position = Vector2(2, -209)
@@ -95,15 +50,15 @@ position = Vector2(2, -209)
 [node name="road collider" parent="roads/road4" index="1"]
 position = Vector2(89.2867, -38.2742)
 
-[node name="Trees" type="TileMap" parent="."]
+[node name="trees" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(-1, 0)
-tile_set = SubResource("TileSet_b4bfb")
+tile_set = ExtResource("3_ojblq")
 format = 2
 layer_0/y_sort_enabled = true
-layer_0/tile_data = PackedInt32Array(196616, 65536, 0, 196629, 65536, 0, 196642, 65536, 0)
+layer_0/tile_data = PackedInt32Array(196629, 65536, 0, 196642, 65536, 0, 458768, 393216, 12, 458777, 393216, 12, 458782, 393216, 12, 458789, 393216, 12, 196615, 65536, 0, 458763, 393216, 12)
 
 [editable path="roads/road"]
-[editable path="roads/road3"]
 [editable path="roads/road2"]
+[editable path="roads/road3"]
 [editable path="roads/road4"]

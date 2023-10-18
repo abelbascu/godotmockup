@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://q6r825dyuhoy"]
+
+[ext_resource type="Texture2D" uid="uid://c43ovctvx11fp" path="res://Assets/Raw Art/Characters/Generic Female NPCs.png" id="1_x76gu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7nij"]
+atlas = ExtResource("1_x76gu")
+region = Rect2(720, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrq5c"]
+atlas = ExtResource("1_x76gu")
+region = Rect2(800, 120, 80, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktciy"]
+atlas = ExtResource("1_x76gu")
+region = Rect2(880, 120, 80, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tuc06"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7nij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrq5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktciy")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}]
+
+[node name="FemaleNPC" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tuc06")
+animation = &"walk_left"
+frame = 2
+frame_progress = 0.273395
