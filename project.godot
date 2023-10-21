@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Godot Mockup"
-run/main_scene="res://Assets/Scenes/Environment/world.tscn"
+run/main_scene="res://addons/dialogue_manager/examples/csharp_balloon/small_balloon.tscn"
 config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [display]
 
@@ -27,6 +31,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Godot Mockup"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [filesystem]
 
