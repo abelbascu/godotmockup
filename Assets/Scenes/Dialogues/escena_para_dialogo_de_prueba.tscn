@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3v3x7r1t4ryf"]
+
+[ext_resource type="Script" path="res://Assets/Scenes/Dialogues/EscenaDialogoDePrueba.cs" id="1_nh1cc"]
+
+[node name="EscenaParaDialogoDePrueba" type="Node2D"]
+script = ExtResource("1_nh1cc")
