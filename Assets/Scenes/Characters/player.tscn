@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://va8l84fsp3va"]
+[gd_scene load_steps=11 format=3 uid="uid://va8l84fsp3va"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Characters/PlayerInput.cs" id="1_gsdpp"]
 [ext_resource type="PackedScene" uid="uid://dlwkin53pl06b" path="res://Assets/Scenes/Characters/playerSprite.tscn" id="2_4te15"]
@@ -99,6 +99,9 @@ _data = {
 radius = 7.0
 height = 14.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7ltd"]
+radius = 30.0167
+
 [node name="Player" type="CharacterBody2D"]
 top_level = true
 y_sort_enabled = true
@@ -120,3 +123,14 @@ libraries = {
 y_sort_enabled = true
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_lyemb")
+
+[node name="ActionableMarker" type="Marker2D" parent="."]
+
+[node name="ActionableFinderArea" type="Area2D" parent="ActionableMarker"]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionableMarker/ActionableFinderArea"]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_m7ltd")
+debug_color = Color(0.639216, 0.521569, 0.215686, 0.419608)

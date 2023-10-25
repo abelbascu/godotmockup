@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://tspjpw60m5hx"]
+
+[ext_resource type="Script" path="res://Assets/Actionables/PadrinetaActionable.cs" id="1_n7hqn"]
+
+[node name="PadrinetaActionable" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_n7hqn")

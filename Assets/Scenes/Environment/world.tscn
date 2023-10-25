@@ -1,20 +1,34 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp1f21hq0bley"]
+[gd_scene load_steps=9 format=3 uid="uid://bp1f21hq0bley"]
 
 [ext_resource type="PackedScene" uid="uid://va8l84fsp3va" path="res://Assets/Scenes/Characters/player.tscn" id="1_2a568"]
 [ext_resource type="PackedScene" uid="uid://i5s2urjo7ni6" path="res://Assets/Scenes/Environment/Rain VFX.tscn" id="2_ql0ir"]
 [ext_resource type="PackedScene" uid="uid://b3xvrshvfjk3r" path="res://Assets/Scenes/Camera/MainCamera.tscn" id="3_ijlst"]
 [ext_resource type="PackedScene" uid="uid://qqxrp0jur1gl" path="res://Assets/Scenes/Environment/MIddle Street.tscn" id="4_th23m"]
 [ext_resource type="PackedScene" uid="uid://q6r825dyuhoy" path="res://Assets/Scenes/Characters/FemaleNPC.tscn" id="5_xuti2"]
+[ext_resource type="PackedScene" uid="uid://tspjpw60m5hx" path="res://Assets/Actionables/PadrinetaActionable.tscn" id="6_0vlmj"]
+[ext_resource type="Resource" uid="uid://jj21sqnfykx0" path="res://Assets/Dialogues/PadrinetaDialogue.dialogue" id="7_rttht"]
 
-[sub_resource type="Environment" id="Environment_rhdyo"]
-background_mode = 3
-adjustment_enabled = true
-adjustment_brightness = 1.25
-adjustment_contrast = 1.47
-adjustment_saturation = 2.34
+[sub_resource type="CircleShape2D" id="CircleShape2D_onlna"]
+radius = 87.9275
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+
+[node name="PadrinetaActionable" parent="." instance=ExtResource("6_0vlmj")]
+position = Vector2(721, 73)
+scale = Vector2(0.4, 0.4)
+dialogue = ExtResource("7_rttht")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PadrinetaActionable"]
+shape = SubResource("CircleShape2D_onlna")
+
+[node name="FemaleNPC" parent="." instance=ExtResource("5_xuti2")]
+texture_filter = 3
+position = Vector2(721, 73)
+scale = Vector2(0.4, 0.4)
+
+[node name="MIddle Street" parent="." instance=ExtResource("4_th23m")]
+z_as_relative = true
 
 [node name="Player" parent="." instance=ExtResource("1_2a568")]
 top_level = false
@@ -26,14 +40,3 @@ position = Vector2(-182, -200)
 
 [node name="MainCamera" parent="Player" instance=ExtResource("3_ijlst")]
 limit_top = -100
-
-[node name="MIddle Street" parent="." instance=ExtResource("4_th23m")]
-z_as_relative = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rhdyo")
-
-[node name="FemaleNPC" parent="." instance=ExtResource("5_xuti2")]
-texture_filter = 3
-position = Vector2(721, 73)
-scale = Vector2(0.4, 0.4)

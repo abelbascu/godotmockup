@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using DialogueManagerRuntime;
 
 public partial class PlayerInput : CharacterBody2D
 {
@@ -13,6 +14,10 @@ public partial class PlayerInput : CharacterBody2D
 	private bool isAnyKeyBeingPressed;
 	private Vector2 inputDirection;
 	private Vector2 motion = Vector2.Zero;
+	private Resource dialogue;
+	public  Area2D actionableFinderArea;
+	public Area2D padrinetaScene;
+	public PadrinetaActionable padrinetaActionable;
 
 
 	public override void _Ready()
@@ -21,6 +26,9 @@ public partial class PlayerInput : CharacterBody2D
 		playerSprite = GetNode<Sprite2D>("MainCharacterSprite");
 		//GD.Print(playerSprite.ToString()); 
 		speed = 100;
+		dialogue = GD.Load<Resource>("res://Assets/Dialogues/PadrinetaDialogue.dialogue");
+		actionableFinderArea = GetNode<Marker2D>("ActionableMarker").GetNode<Area2D>("ActionableFinderArea");
+		padrinetaActionable = GetNode<PadrinetaActionable>("../PadrinetaActionable");
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -28,13 +36,30 @@ public partial class PlayerInput : CharacterBody2D
 		//PlayerIsKeyPressedInput();
 		//PlayerGetVectorInput();
 		PlayerIsActionPressedInput();
+		
 	}
 
 
-	public void PlayerIsActionPressedInput()
+	public async void PlayerIsActionPressedInput()
 	{
 		// Reset motion vector
 		motion = Vector2.Zero;
+
+		
+
+		if (Input.IsActionPressed("action"))
+		{
+			var actionables = actionableFinderArea.GetOverlappingAreas();
+			if ((actionables.Count > 0))
+			{
+				
+				padrinetaActionable.DialogueTrigger();
+				GD.Print("colisionando con Padrineta");
+				return;
+			}
+			
+		}
+	
 
 		// Detect input for movement
 		if (Input.IsActionPressed("up"))
@@ -142,7 +167,7 @@ public partial class PlayerInput : CharacterBody2D
 		if (isAnyKeyBeingPressed == false)
 		{
 			playerAnimations.Play("idle_down");
-			GD.Print(Velocity.ToString());
+			//GD.Print(Velocity.ToString());
 		}
 
 		//GD.Print(isAnyKeyBeingPressed);
