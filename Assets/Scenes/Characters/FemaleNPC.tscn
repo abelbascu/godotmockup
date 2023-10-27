@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://q6r825dyuhoy"]
 
-[ext_resource type="Texture2D" uid="uid://c43ovctvx11fp" path="res://Assets/Raw Art/Characters/Generic Female NPCs.png" id="1_x76gu"]
+[ext_resource type="Texture2D" uid="uid://b3b18aur0u7r1" path="res://Assets/Raw Art/Characters/Generic Female NPCs.png" id="1_x76gu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y7nij"]
 atlas = ExtResource("1_x76gu")
@@ -39,7 +39,6 @@ animations = [{
 [node name="FemaleNPC" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -33)
 sprite_frames = SubResource("SpriteFrames_tuc06")
 animation = &"walk_left"
-frame = 2
-frame_progress = 0.273395

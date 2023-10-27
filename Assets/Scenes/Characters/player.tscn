@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://va8l84fsp3va"]
+[gd_scene load_steps=12 format=3 uid="uid://va8l84fsp3va"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/Characters/PlayerInput.cs" id="1_gsdpp"]
 [ext_resource type="PackedScene" uid="uid://dlwkin53pl06b" path="res://Assets/Scenes/Characters/playerSprite.tscn" id="2_4te15"]
+[ext_resource type="Resource" uid="uid://jj21sqnfykx0" path="res://Assets/Dialogues/PadrinetaDialogue.dialogue" id="2_l7mw1"]
 
 [sub_resource type="Animation" id="Animation_r3gg4"]
 resource_name = "idle_down"
@@ -102,11 +103,14 @@ height = 14.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_m7ltd"]
 radius = 30.0167
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("playerAnimations", "playerSprite")]
 top_level = true
 y_sort_enabled = true
 script = ExtResource("1_gsdpp")
 speed = 50.0
+playerAnimations = NodePath("MainCharacterAnimationPlayer")
+playerSprite = NodePath("MainCharacterSprite")
+dialogue = ExtResource("2_l7mw1")
 
 [node name="MainCharacterSprite" parent="." instance=ExtResource("2_4te15")]
 y_sort_enabled = true

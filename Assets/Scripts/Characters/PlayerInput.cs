@@ -7,14 +7,13 @@ using DialogueManagerRuntime;
 public partial class PlayerInput : CharacterBody2D
 {
 
-	[Export]
-	private float speed;
-	private AnimationPlayer playerAnimations;
-	private Sprite2D playerSprite;
+	[Export] private float speed;
+	[Export] private AnimationPlayer playerAnimations;
+	[Export] private Sprite2D playerSprite { get; set; }
+	[Export] private Resource dialogue;
 	private bool isAnyKeyBeingPressed;
 	private Vector2 inputDirection;
 	private Vector2 motion = Vector2.Zero;
-	private Resource dialogue;
 	public  Area2D actionableFinderArea;
 	public Area2D padrinetaScene;
 	public PadrinetaActionable padrinetaActionable;
@@ -22,11 +21,18 @@ public partial class PlayerInput : CharacterBody2D
 
 	public override void _Ready()
 	{
-		playerAnimations = GetNode<AnimationPlayer>("MainCharacterAnimationPlayer");
-		playerSprite = GetNode<Sprite2D>("MainCharacterSprite");
+		//no need to initialize nodes with hardcoded nodepaths below as I'm using Export references above
+		//references need to be added manually in the editor
+
+		//playerAnimations = GetNode<AnimationPlayer>("MainCharacterAnimationPlayer");
+		//playerAnimations = FindChild("MainCharacterAnimationPlayer") as AnimationPlayer; //it works, but more expensive than GetNode<>
+		//playerSprite = GetNode<Sprite2D>("MainCharacterSprite");
+
 		//GD.Print(playerSprite.ToString()); 
+
 		speed = 100;
-		dialogue = GD.Load<Resource>("res://Assets/Dialogues/PadrinetaDialogue.dialogue");
+		
+		//dialogue = GD.Load<Resource>("res://Assets/Dialogues/PadrinetaDialogue.dialogue");
 		actionableFinderArea = GetNode<Marker2D>("ActionableMarker").GetNode<Area2D>("ActionableFinderArea");
 		padrinetaActionable = GetNode<PadrinetaActionable>("../PadrinetaActionable");
 	}
